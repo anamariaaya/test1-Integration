@@ -1,0 +1,36 @@
+@use "sass:math";
+@use 'vars' as v;
+@use 'mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$font;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    background-image: url('/build/img/background.webp');    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 15%;
+}
+
+a {
+    text-decoration: none;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+h1, h2, h3, h4 {
+    font-family: v.$titleFont;
+    margin: 3.5rem 0;
+    text-align: center;
+}

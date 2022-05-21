@@ -1,0 +1,114 @@
+@use 'sass:math';
+@use 'base/vars' as v;
+@use 'base/mixins' as m;
+
+.mainHeader{
+    display: grid;
+    grid-template-columns: 1fr;
+    @include m.tablet{
+        grid-template-columns: 1fr 4fr 1fr;
+        align-content: center;
+        justify-items: center;
+    }
+    .mainTitle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1{
+            font-size: 2.4rem;
+            font-family: v.$titleFont;
+            text-transform: uppercase;
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                display: block;
+                width: 10rem;
+                height: 0.4rem;
+                background-color: v.$orangeRed;
+                left: 34%;
+            }
+            @include m.tablet{
+                font-size: 4.4rem;
+            }
+        }
+        img{
+            width: 4.4rem;
+            height: fit-content;
+            margin-right: 1.2rem;
+        }
+    }
+    button{
+        background-color: transparent;
+        grid-row: 2/3;
+        text-align: right;
+        text-transform: capitalize;
+        &:hover{
+            cursor: pointer;
+        }
+        @include m.tablet{
+            grid-row: 1/2;
+            text-align: left;
+        }
+    }
+    .viewChanger{
+        display: none;
+        &:hover{
+            cursor: pointer;
+        }
+        p{
+            margin-right: 1.2rem;
+            text-transform: capitalize;
+        }
+        @include m.tablet{
+            display: flex;
+            align-items: center;            
+        }
+    }
+    .viewChanger, button{
+        text-decoration: underline;
+        font-weight: v.$semiBold;
+        color: lighten(v.$gray, 5);
+        font-size: 1.6rem;
+    }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 5rem;
+    height: 2.5rem;
+    padding: 3px;
+    background-color: v.$lightGray;
+    border-radius: 1.8rem;
+    cursor: pointer;
+    .switch-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
+    //   .switch-input:checked ~ .switch-label:before {
+    //     opacity: 0;
+    //   }
+    //   .switch-input:checked ~ .switch-label:after {
+    //     opacity: 1;
+    //   }              
+    .switch-handle {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 18px;
+        height: 18px;
+        background: white;
+        border-radius: 10px;
+        -webkit-transition: left 0.15s ease-out;
+        -moz-transition: left 0.15s ease-out;
+        -o-transition: left 0.15s ease-out;
+        transition: left 0.15s ease-out;
+    }
+      .switch-input:checked ~ .switch-handle {
+        left: 55%;
+      }
+}

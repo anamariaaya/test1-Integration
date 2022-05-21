@@ -1,0 +1,33 @@
+@use 'sass:math';
+@use 'base/vars' as v;
+@use 'base/mixins' as m;
+
+.sitesList{
+    display: block;
+    .siteBlock{
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 8.3rem;
+        @include m.tablet{
+            gap: 3rem;
+        }
+        @include m.desktop{
+            gap: 0rem;
+        }
+    }
+
+    .siteInfo{
+        gap: 1.5rem;
+        justify-content: space-around;
+        @include m.desktop{
+            gap: 7rem;
+        }
+        @include m.desktop{
+            gap: 7rem;
+        }
+        .siteContent{
+            justify-content: space-between;
+        }
+    }
+}

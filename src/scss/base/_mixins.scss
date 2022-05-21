@@ -1,0 +1,56 @@
+@use "sass:math";
+@use 'vars' as v;
+
+/** Media Queries **/
+
+@mixin phone {
+    @media (min-width: #{v.$phone}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{v.$tablet}) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: #{v.$desktop}) {
+        @content;
+    }
+}
+
+@mixin bigScreen {
+    @media (min-width: #{v.$bigScreen}) {
+        @content;
+    }
+}
+
+@mixin giant {
+    @media (min-width: #{v.$giant}) {
+        @content;
+    }
+}
+
+@mixin grid($columns, $spacing) {
+    display: grid;
+    gap: $spacing;
+    grid-template-columns: repeat($columns, 1fr);
+}
+
+@mixin button($bgColor, $display){
+    background-color: $bgColor;
+    color: v.$white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    text-align: center;
+    display: $display;
+    border-radius: 2rem;
+    border: none;
+
+    &:hover{
+        cursor: pointer;
+    }
+}

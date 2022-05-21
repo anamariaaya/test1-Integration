@@ -1,0 +1,120 @@
+@use 'sass:math';
+@use 'base/vars' as v;
+@use 'base/mixins' as m;
+
+.baseElement{
+    margin-top: math.div(v.$separation, 2);
+    .siteBlock{
+        margin: math.div(v.$separation, 2) 0;
+        width: 100%;
+        padding: 0 0 0 2rem;
+        background-color: v.$white;
+        border-radius: 1.8rem;
+        box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        @include m.tablet{
+            padding: 1.6rem 2.4rem;
+        }
+    }
+        
+    .siteInfo{
+        display: flex;
+        align-items: center;
+        .siteContent{
+            display: flex;
+            align-items: center;
+            gap:1rem;
+            @include m.tablet{
+                gap: 2.5rem;
+            }
+            img{
+                width: 10rem;
+                height: fit-content;
+                @include m.tablet{
+                    width: 12rem;
+                }
+            }
+            .siteId{
+                font-size: 2.4rem;
+                color: v.$gray;
+                font-weight: v.$bold;
+                margin: 0;
+                @include m.tablet{
+                    font-size: 2.8rem;
+                }
+            }
+            .review{
+                color: v.$gray;
+                text-decoration: underline;
+                font-size: 1.6rem;
+                text-align: center;
+                display: block;
+                @include m.tablet{
+                    font-size: 2rem;
+                    text-align: left;
+                }
+            }
+            .stars{
+                display: none;
+                @include m.tablet{
+                    display: flex;
+                    i{
+                        color: v.$yellow;
+                        font-size: 1.4rem;
+                        padding: .5rem;
+                    }
+                }
+            }
+        }    
+        
+        .promo{
+            font-size: 1.6rem;
+            color: v.$blue;
+            overflow-wrap: break-word;
+            text-align: center;
+            @include m.tablet{
+                font-size: 2.2rem;
+                text-align: left;
+            }
+        }
+        
+        .playNow{
+            font-size: 0rem;
+            padding: 2rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background-color: v.$orangeRed;
+            color: v.$white;
+            border-radius: 0 1.8rem 1.8rem 0;
+            text-transform: capitalize;
+            min-height: 4.3rem;
+            @include m.tablet{
+                border-radius: .4rem;
+                font-size: 1.6rem;
+                padding: 1rem 4rem;
+                min-height: auto;
+                inline-size: max-content;
+            }
+            i{
+                margin-left: 0;
+                color: v.$white;
+                font-size: 2rem;
+                @include m.tablet{
+                    margin-left: 2.4rem;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+    .mainBlock{
+        &:hover>.siteBlock{
+            transform: scale(1.05);
+            @include m.tablet{
+                    transform: scale(1.1);
+            }
+        }
+    }
+}
+

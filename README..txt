@@ -1,0 +1,1 @@
+Authorized use only for the selection process assessment. Commercial use or distribution in whole or in part is prohibited.

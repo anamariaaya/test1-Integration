@@ -1,0 +1,43 @@
+@use "sass:math";
+@use 'vars' as v;
+@use 'mixins' as m;
+
+.section {
+    margin-top: math.div(v.$separation, 2);
+    margin-bottom: math.div(v.$separation, 2);
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    z-index: 11;
+}
+
+.align-right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.no-click{
+    pointer-events: none;
+}
+
+.margin-bottom{
+    margin-bottom: v.$separation;
+}
+
+.margin-top{
+    margin-top: v.$separation;
+}
+
+.no-border{
+    border:none;
+}
+
+.no-display{
+    display: none !important;
+}

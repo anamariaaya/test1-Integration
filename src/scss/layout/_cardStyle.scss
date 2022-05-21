@@ -1,0 +1,49 @@
+@use 'sass:math';
+@use 'base/vars' as v;
+@use 'base/mixins' as m;
+
+@include m.tablet{
+    .sitesCards{
+        @include m.grid(5, 1.6rem);
+        @keyframes delay{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .siteBlock{
+            justify-content: space-between;
+            flex-direction: column;
+            height: 100%;
+        }
+            
+        .siteInfo{
+            flex-direction: column;
+            gap: math.div(v.$separation, 2);
+            justify-content: space-evenly;
+            .siteContent{
+                flex-direction: column;
+                justify-content: space-evenly;
+    
+                .siteId{
+                    text-align: left;
+                    width: 100%;
+                    transform: translateX(-5rem);
+                }
+            }    
+            
+            .promo{
+                text-align: center;
+            }
+            
+            .playNow{
+    
+                i{
+                    margin-left: 2.4rem;
+                }
+            }
+        }
+    }
+}
