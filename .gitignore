@@ -129,9 +129,3 @@ dist
 requirements.txt
 
 package-lock.json
-
-package.json
-
-gulpfile.js
-
-
